@@ -9,7 +9,7 @@ import OverviewProperties from "../components/common/OverviewProperties";
 
 const IngestionDetails = () => {
   return (
-    <div className=" m-5 mb-0 ingestion-height overflow-y-scroll ">
+    <div className=" m-5 mb-0 mr-0 ">
       <div className=" flex items-start justify-between gap-[120px]">
         <div>
           <p className=" font-nunitoextrabold text-lg">
@@ -47,7 +47,7 @@ const IngestionDetails = () => {
         <p className="pb-[6px]">Events</p>
       </div>
 
-      <div className=" flex flex-col  pt-5 pl-6 bg-darkblue mt-4 mr-2">
+      <div className=" flex flex-col  pt-5 pl-6 bg-darkblue mt-4 mr-2 h-full">
         <h3 className=" font-nunitoextrabold text-base mb-4">Properties</h3>
         <OverviewProperties
           requestStatement="Name"

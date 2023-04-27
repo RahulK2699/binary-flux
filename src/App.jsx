@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className=" w-full  bg-bgblue ingestion-height ">
+      <div className=" w-full  bg-bgblue ingestion-height  overflow-scroll relative top-[66px]">
         <IngestionList />
       </div>
     </div>

@@ -52,7 +52,12 @@ body{
 }
 
 .ingestion-height{
-   height:  calc(100vh - 66pxpx);
+   height:  calc(100vh - 66px);
+}
+
+.mytransition{
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 // custom checkbox start
@@ -62,6 +67,7 @@ body{
   width: 24px;
   display: inline-block;
   position: relative;
+  z-index: 1;
   cursor: pointer;
   font-size: 16px;
   user-select: none;

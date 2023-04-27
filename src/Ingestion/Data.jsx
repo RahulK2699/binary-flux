@@ -2,14 +2,14 @@ import React from "react";
 import CheckBox from "../components/common/CheckBox";
 import LineChart from "../components/common/LineChart";
 
-const Data = () => {
+const Data = ({ id: checkboxId }) => {
   const arr = ["RULES", "POLICIES", "CRICTICAL ALTERS", "CRICTICAL ALTERS"];
   const num = [9, 4, 2, 2];
   return (
     <div className=" flex justify-between py-5 border-b border-b-binaryblue border-opacity-40 px-6">
       <div>
         <div className="flex gap-4">
-          <CheckBox />
+          <CheckBox id={checkboxId} />
           <p className=" font-nunitobold text-sm text-white">
             <span className=" text-xl font-nunitoregular "># </span>
             Ingestion Name
@@ -44,10 +44,8 @@ const Data = () => {
 
       {/* Graph */}
       <div className=" flex items-center">
-        <div className=" relative w-[142px] h-[56px]">
-          <div className="   w-[142px] h-[56px] absolute -top-7">
-            <LineChart />
-          </div>
+        <div className=" relative z-[1]">
+          <LineChart />
         </div>
 
         <div>

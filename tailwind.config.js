@@ -32,8 +32,7 @@ module.exports = {
         13: "52px",
       },
       gridTemplateColumns: {
-        ingestionxl: "45% 55%",
-        ingestionnormal: "50% 50%",
+        ingestionxl: "40% 60%",
       },
     },
   },

@@ -12,7 +12,7 @@ import organization from "../assets/images/organization.svg";
 
 const IngestionMenu = () => {
   return (
-    <div className=" bg-bgblue1 w-full grid grid-cols-4  px-[76px] pb-[100px] pt-12 gap-10 absolute z-10 left-0 top-[67px] transition-all delay-75">
+    <div className=" bg-bgblue1 w-full grid grid-cols-4  px-[76px] pb-[100px] pt-12 gap-10 absolute z-10 left-0 top-[67px] ">
       <CommonMenu
         icon={automation}
         heading={"Ingestion & Automation"}

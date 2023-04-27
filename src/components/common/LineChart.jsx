@@ -1,83 +1,80 @@
 import React from "react";
-import Chart from "react-apexcharts";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 const LineChart = () => {
-  const [options, setOptions] = React.useState({
+  const options = {
+    title: {
+      text: "",
+    },
     chart: {
-      background: "transparent",
-      toolbar: {
-        show: false,
+      backgroundColor: "transparent",
+      type: "areaspline",
+      height: 100,
+      width: 140,
+    },
+    credits: {
+      enabled: false,
+    },
+    xAxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "May"],
+      visible: false,
+      gridLineWidth: 0,
+      tickWidth: 0,
+    },
+    yAxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "May"],
+      visible: false,
+      title: {
+        text: "",
+        tickWidth: 0,
       },
+      legend: {
+        enabled: false,
+      },
+      // gridLineWidth: 0,
     },
-    stroke: {
-      curve: "smooth", // can be 'smooth' or 'straight'
-      // an array of colors to apply to the line
-      width: 4, // the thickness of the line
-    },
+    plotOptions: {
+      series: {
+        dataLabels: {
+          enabled: false,
+        },
+        marker: {
+          enabled: false,
+        },
 
-    xaxis: {
-      categories: [2009, 2010, 2011, 2012, 2013],
-      labels: {
-        show: false,
+        fillColor: {
+          linearGradient: {
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+          },
+          stops: [
+            [0, "#3C92FF"],
+            [0.8, "#3C92FF3D"],
+          ],
+        },
       },
-      axisBorder: {
-        show: false,
-      },
-    },
-    yaxis: {
-      labels: {
-        show: false,
-      },
-      axisBorder: {
-        show: false,
+      column: {
+        pointPadding: 0, // controls the padding between individual data points
+        groupPadding: 0, // controls the padding between groups of data points
       },
     },
     legend: {
-      show: false,
+      enabled: false,
     },
-    grid: {
-      show: false,
-      xaxisTicks: {
-        show: false,
+    series: [
+      {
+        name: "",
+        data: [6, 4, 3, 1, 5],
+        lineWidth: 4,
+        color: "#3C92FF",
       },
-      yaxisTicks: {
-        show: false,
-      },
-    },
-    markers: {
-      show: false,
-    },
-  });
+    ],
+  };
 
-  const [series, setSeries] = React.useState([
-    {
-      name: "Sales",
-      data: [2, 40, 80, 25, 49],
-      type: "area",
-      // fill: {
-      //   type: "gradient",
-      //   gradient: {
-      //     shade: "light",
-      //     type: "vertical",
-      //     shadeIntensity: 0.5,
-      //     //gradientToColors: ["#ABE5A1", "#63C7FD", "#FFB64D"],
-      //     inverseColors: true,
-      //     opacityFrom: 0.7,
-      //     opacityTo: 0.3,
-      //     colorStops: [0, 50, 100],
-      //   },
-      // },
-      fill: {
-        colors: ["#ABE5A1", "#63C7FD", "#FFB64D"],
-        opacity: 0.5,
-      },
-      markers: {
-        show: false,
-      },
-    },
-  ]);
-
-  return <Chart options={options} series={series} type="line" height="100" />;
+  return <HighchartsReact highcharts={Highcharts} options={options} />;
 };
 
 export default LineChart;
