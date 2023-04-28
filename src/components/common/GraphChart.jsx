@@ -2,14 +2,42 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const LineChart = () => {
+const GraphChart = ({
+  chartType,
+  xAxisCategories = [],
+  yAxisCategories,
+  seriesData,
+}) => {
+  const selectGradient = (type) => {
+    let chartGradient = {};
+    switch (type) {
+      case "areaspline":
+        chartGradient = {
+          linearGradient: {
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+          },
+          stops: [
+            [0, "#3C92FF"],
+            [0.8, "#3C92FF3D"],
+          ],
+        };
+        return chartGradient;
+
+      default:
+        return {};
+    }
+  };
+
   const options = {
     title: {
       text: "",
     },
     chart: {
       backgroundColor: "transparent",
-      type: "areaspline",
+      type: chartType,
       height: 100,
       width: 140,
     },
@@ -17,13 +45,13 @@ const LineChart = () => {
       enabled: false,
     },
     xAxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May"],
+      categories: xAxisCategories,
       visible: false,
       gridLineWidth: 0,
       tickWidth: 0,
     },
     yAxis: {
-      categories: ["Jan", "Feb", "Mar", "Apr", "May"],
+      categories: yAxisCategories,
       visible: false,
       title: {
         text: "",
@@ -43,38 +71,19 @@ const LineChart = () => {
           enabled: false,
         },
 
-        fillColor: {
-          linearGradient: {
-            x1: 0,
-            y1: 0,
-            x2: 0,
-            y2: 1,
-          },
-          stops: [
-            [0, "#3C92FF"],
-            [0.8, "#3C92FF3D"],
-          ],
-        },
+        fillColor: selectGradient(chartType),
       },
       column: {
-        pointPadding: 0, // controls the padding between individual data points
-        groupPadding: 0, // controls the padding between groups of data points
+        borderWidth: 0,
       },
     },
     legend: {
       enabled: false,
     },
-    series: [
-      {
-        name: "",
-        data: [6, 4, 3, 1, 5],
-        lineWidth: 4,
-        color: "#3C92FF",
-      },
-    ],
+    series: seriesData,
   };
 
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 };
 
-export default LineChart;
+export default GraphChart;

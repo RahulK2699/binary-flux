@@ -15,6 +15,10 @@ module.exports = {
       binarypurple: "#191B34",
       binarypurpledark: "#0F1226",
       textsecondar: "#C5C6CC",
+      binarypurplelight: "#0E2948",
+      secondary: "#C5C6CC",
+      alert: "#384E75",
+      alertcritical: "#FF3D00",
     },
 
     //cutom fonts

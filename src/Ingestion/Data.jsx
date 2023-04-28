@@ -1,6 +1,6 @@
 import React from "react";
 import CheckBox from "../components/common/CheckBox";
-import LineChart from "../components/common/LineChart";
+import GraphChart from "../components/common/GraphChart";
 
 const Data = ({ id: checkboxId }) => {
   const arr = ["RULES", "POLICIES", "CRICTICAL ALTERS", "CRICTICAL ALTERS"];
@@ -45,7 +45,41 @@ const Data = ({ id: checkboxId }) => {
       {/* Graph */}
       <div className=" flex items-center">
         <div className=" relative z-[1]">
-          <LineChart />
+          <GraphChart
+            chartType={"areaspline"}
+            xAxisCategories={["Jan", "Feb", "Mar", "Apr", "May"]}
+            yAxisCategories={[["Jan", "Feb", "Mar", "Apr", "May"]]}
+            seriesData={[
+              {
+                name: "",
+                data: [5, 3, 4, 1, 7, 2],
+                lineWidth: 4,
+                color: "#3C92FF",
+              },
+            ]}
+          />
+          {/* <GraphChart
+            chartType={"column"}
+            xAxisCategories={["Jan", "Feb", "Mar", "Apr", "May"]}
+            yAxisCategories={[["Jan", "Feb", "Mar", "Apr", "May"]]}
+            seriesData={[
+              {
+                name: "BPL",
+                data: [3, 5, 1, 13],
+                color: "red",
+              },
+              {
+                name: "FA Cup",
+                data: [14, 8, 8, 12],
+                color: "green",
+              },
+              {
+                name: "CL",
+                data: [0, 2, 6, 3],
+                color: "yellow",
+              },
+            ]}
+          /> */}
         </div>
 
         <div>
